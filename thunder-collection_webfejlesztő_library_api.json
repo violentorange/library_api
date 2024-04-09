@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "webfejlesztő_library_api",
-    "dateExported": "2024-04-09T14:55:00.618Z",
+    "dateExported": "2024-04-09T15:50:09.164Z",
     "version": "1.1",
     "folders": [
         {
@@ -23,6 +23,29 @@
             "sortNum": 10000,
             "created": "2024-04-09T13:48:08.846Z",
             "modified": "2024-04-09T13:50:02.665Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c56cc3c4-6f24-45f8-86db-68038aa2627b",
+            "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
+            "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
+            "name": "Get all books",
+            "url": "http://127.0.0.1:8000/api/books",
+            "method": "GET",
+            "sortNum": 12500,
+            "created": "2024-04-09T15:22:24.196Z",
+            "modified": "2024-04-09T15:23:25.365Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -65,6 +88,34 @@
             "tests": []
         },
         {
+            "_id": "1b8a746d-967a-4c83-9d11-bdb7cb45887a",
+            "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
+            "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
+            "name": "Create book",
+            "url": "http://127.0.0.1:8000/api/books",
+            "method": "POST",
+            "sortNum": 16250,
+            "created": "2024-04-09T15:25:35.555Z",
+            "modified": "2024-04-09T15:41:13.188Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"title\": \"My new book\",\n\"ISBN\": \"1234567890123\",\n\"year\": 2024,\n\"pages\": 123,\n\"category_id\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "4e7ecc61-3a10-4564-be74-a608d735f68e",
             "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
             "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
@@ -93,6 +144,34 @@
             "tests": []
         },
         {
+            "_id": "6d6f014a-e1ca-4ad7-8af4-4776c093edd9",
+            "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
+            "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
+            "name": "Update book",
+            "url": "http://127.0.0.1:8000/api/books/1",
+            "method": "PATCH",
+            "sortNum": 18750,
+            "created": "2024-04-09T15:49:19.413Z",
+            "modified": "2024-04-09T15:49:55.695Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"title\": \"updated title\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "6cd6fda4-9757-45de-9c1e-484c4a39c870",
             "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
             "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
@@ -116,6 +195,29 @@
             "tests": []
         },
         {
+            "_id": "03f32a8f-cebe-4651-897c-7c7d93c17f8e",
+            "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
+            "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
+            "name": "Get one book",
+            "url": "http://127.0.0.1:8000/api/books/10",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-04-09T15:23:43.324Z",
+            "modified": "2024-04-09T15:23:59.854Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
             "_id": "7c1cff08-22a3-4b9d-99c2-fc1717f4a7f5",
             "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
             "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
@@ -125,6 +227,29 @@
             "sortNum": 30000,
             "created": "2024-04-09T14:35:58.705Z",
             "modified": "2024-04-09T14:39:08.642Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ab2d0d77-3beb-4eab-b1b5-fc786cbcb83c",
+            "colId": "4155b804-7f68-4b65-b94a-053c911c8719",
+            "containerId": "62548ce5-bd52-4898-aaa7-c549b9681e65",
+            "name": "Delete book",
+            "url": "http://127.0.0.1:8000/api/books/10",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-04-09T15:49:17.253Z",
+            "modified": "2024-04-09T15:49:36.143Z",
             "headers": [
                 {
                     "name": "Accept",
