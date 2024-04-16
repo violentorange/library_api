@@ -21,6 +21,8 @@ class BookResource extends JsonResource
             'year' => $this->year,
             'pages' => $this->pages,
             'category_id' => $this->category_id,
+            //'category' => new CategoryResource($this->category),
+            'category_name' => $this->category->name,
         ];
     }
 }

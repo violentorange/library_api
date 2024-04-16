@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\BookResource;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -71,4 +72,11 @@ class CategoryController extends Controller
         $category->delete();
         return response()->noContent();
     }
+
+    public function showBooks(Category $category)
+    {
+        //return $category->books;
+        return BookResource::collection($category->books);
+    }
+
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Http\Resources\AuthorResource;
 use App\Http\Resources\BookResource;
 use App\Models\Book;
 use Illuminate\Http\Request;
@@ -24,6 +25,11 @@ class BookController extends Controller
     public function store(StoreBookRequest $request)
     {
        $book= Book::create($request->all());
+
+       if ($request->has('authors')) {
+        $book->authors()->attach($request->authors);
+       }
+
        return BookResource::make($book);
     }
 
@@ -51,5 +57,10 @@ class BookController extends Controller
     {
         $book->delete();
         return response()->noContent();
+    }
+
+    public function showAuthors(Book $book)
+    {
+        return AuthorResource::collection($book->authors);
     }
 }
