@@ -8,6 +8,7 @@ use App\Models\Author;
 use App\Models\Book;
 use App\Models\Category;
 use App\Models\Country;
+use App\Models\Reader;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,7 +28,7 @@ class DatabaseSeeder extends Seeder
 
         //categories = Category::factory(10)->create();ű
 
-        $category_names = ['Programming', 'Science', 'History','Math'];
+        $category_names = ['Programming', 'Science', 'History', 'Math'];
         foreach ($category_names as $category_name) {
             $category = Category::factory()->create([
                 'name' => $category_name,
@@ -48,6 +49,16 @@ class DatabaseSeeder extends Seeder
         foreach ($books as $book) {
             //$book->authors()->attach($authors->random());
             $book->authors()->attach($authors->random(rand(1, 3)));
+        }
+
+        $readers = Reader::factory(100)->create();
+
+        foreach ($readers as $reader) {
+            $reader->books()->attach($books->random(rand(1, 5)),[
+                'start_date' => now(),
+                'end_date' => now()->addDays(rand(10,30)),
+                'is_returned' => fake()->boolean(),
+            ]);
         }
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\ReaderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +34,7 @@ Route::apiResource('authors', AuthorController::class);
 Route::get('authors/{author}/books', [AuthorController::class,'showBooks']);
 
 Route::get('countries/{country}/authors', [CountryController::class,'showAuthors']);
+
+Route::apiResource('readers', ReaderController::class);
+Route::get('readers/{reader}/books', [ReaderController::class,'showBooks']);
+Route::post('readers/{reader}/books', [ReaderController::class, 'checkoutBooks']);
